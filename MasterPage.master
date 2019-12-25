@@ -1,0 +1,136 @@
+﻿    <%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"
+    media="screen,projection" />
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.js"></script>
+<title>Health Care</title>
+<asp:contentplaceholder id="head" runat="server">
+    </asp:contentplaceholder>
+<style type="text/css">
+    .waves-effect input[type="submit"]
+    {
+        border: 0;
+        font-style: normal;
+        font-size: inherit;
+        line-height: inherit;
+        text-transform: inherit;
+        background: none;
+        color: White;
+    }
+</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!--Header-->
+    <!--Navbar-->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown-trigger").dropdown();
+        });
+    </script>
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="user_register_login.aspx">User/Patient</a></li>
+        <li class="divider"></li>
+        <li><a href="doc_reg_login.aspx">Doctor</a></li>
+         <li class="divider"></li>
+        <li><a href="pharma_reg_login.aspx">Pharmacist</a></li>
+    </ul>
+    <nav class="#2196f3 blue">
+    <div class="nav-wrapper">
+      <a href="Default.aspx" class="brand-logo">HealthCare</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="active"><a href="Default.aspx">Home</a></li>
+        <li Id="docList" runat="server"><a href="find_doc.aspx">Doctors List</a></li>
+        <li Id="appointment" runat="server"><a href="appointment.aspx">Appointment</a></li>
+        <li Id="todayApp" runat="server"><a href="appointment_mail.aspx">Confirmed Appointment</a></li>
+        <li Id="doctorPrescription" runat="server" visible="false"><a href="doc_prescription.aspx">Prescription</a></li>
+        <li Id="pharmaOrders" runat="server"><a href="pharma_orders.aspx">Orders</a></li>
+        <li><a href="aboutus.aspx">About Us</a></li>
+        <li Id="loginLink" runat="server"><a class="dropdown-trigger" data-target="dropdown1">Register/Login<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li> <asp:Button ID="btnLogout" runat="server" Text="Logout" 
+                              
+                onclick="btnLogout_Click" CssClass="btn-flat waves-effect waves-light">
+                            </asp:Button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <script>
+        $(document).ready(function () {
+            $('.parallax').parallax();
+        });
+    </script>
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="images/8.jpg"></div>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+    <!--Footer-->
+    <script>
+    body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+    </script>
+    <style type="text/css">
+      .newanchor:link {
+color:white;
+text-decoration:none;
+}
+    </style>
+    <footer class="page-footer #2196f3 blue">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h4 class="white-text"><b>Contact Us:</b></h4>
+
+                
+                <p class="grey-text text-lighten-4">  
+                <ul class="address">
+            <li><i class="fa fa-map-marker"></i><span><b>Address:</b></span> 
+                Kandivali West 400 067</li>
+            <li><i class="fa fa-phone"></i><span><b>Phone:</b></span> <u><a class="newanchor" href="tel:+91 8789786545">+91
+                +91 8789786545</a></u> </li>
+            <li><i class="fa fa-envelope"></i><span><b>Email:</b></span> <u><a class="newanchor" href="mailto:demo@gmail.com">
+                demo@gmail.com.com</a> </u></li>
+            <li><i class="fa fa-globe"></i><span><b>Website:</b></span> <u><a class="newanchor" href="http://www.esociety.com">
+                www.esociety.com</a></u></li>
+        </ul>
+        </p>
+              </div>
+            <%--  <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="newanchor" class="grey-text text-lighten-3" href="default.aspx"><u>Home</u></a></li>
+                  <li><a class="newanchor" class="grey-text text-lighten-3" href="aboutus.aspx"><u>About Us</u></a></li>
+                  <li><a class="newanchor" class="grey-text text-lighten-3" href="user_register_login.aspx"><u>User Register/Login</u></a></li>
+                  <li><a class="newanchor" class="grey-text text-lighten-3" href="doc_reg_login.aspx"><u>Doctor Register/Login</u></a></li>
+                  <li><a class="newanchor"  href="pharma_reg_login.aspx"><u>Pharma Register/Login</u></a></li>
+                </ul>
+              </div>--%>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+           <p align="right"> © 2018 Copyright Text </p>
+          <%--  <a class="grey-text text-lighten-4 right" href="#!">More Links</a>--%>
+            </div>
+          </div>
+        </footer>
+</body>
+</html>
